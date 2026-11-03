@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="checkout" tests="6" failures="2">
+  <testsuite name="cart" tests="3" failures="0">
+    <testcase classname="cart" name="adds an item" time="0.40"/>
+    <testcase classname="cart" name="applies a coupon" time="0.95"/>
+    <testcase classname="cart" name="empties the cart" time="0.36"/>
+  </testsuite>
+  <testsuite name="payment" tests="3" failures="2">
+    <testcase classname="payment" name="rejects an expired card" time="0.50">
+      <failure message="expected 402, got 500">AssertionError</failure>
+    </testcase>
+    <testcase classname="payment" name="charges the right amount" time="0.81"/>
+    <testcase classname="payment" name="shows a receipt &amp; email notice" time="3.02">
+      <error message="socket hang up">Error</error>
+    </testcase>
+  </testsuite>
+</testsuites>
